@@ -151,8 +151,7 @@ class RegisterController extends Controller
         //  DB::rollBack();
         DB::commit();
 
-        // Mail::to('francisgill1000@gmail.com')->cc('faisalislam81@gmail.com')->send(new HostCreated());
-
+        $this->SendMail($request);
 
            return redirect()->back()
                     ->with('message', 'You Registration Request Has Been Submitted Successfully!')
@@ -175,6 +174,14 @@ class RegisterController extends Controller
             return back();
         }
 
+    }
+
+    public function SendMail($request)
+    {
+        Mail::to($request->email)
+                ->bcc('faisalislam81@gmail.com')
+                ->bcc('mfmalik1975@gmail.com')
+                ->send(new HostCreated($request));
     }
 
 }

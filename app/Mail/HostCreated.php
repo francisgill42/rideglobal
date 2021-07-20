@@ -16,9 +16,10 @@ class HostCreated extends Mailable
      *
      * @return void
      */
-    public function __construct()
+    protected $request;
+    public function __construct($request)
     {
-        //
+        $this->request = $request;
     }
 
     /**
@@ -28,6 +29,9 @@ class HostCreated extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.host.created');
+        return $this->view('emails.host.created')
+        ->with([
+            'request' => $this->request,
+        ]);;
     }
 }

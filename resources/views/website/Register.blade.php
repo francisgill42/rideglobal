@@ -29,9 +29,9 @@
                     @endif
                     <form method="Post" action="/rider-registration">
                         @csrf
-                        <input style="width: 50%;padding: 15px;margin: 5px;border-radius: 1px;border: 1px solid #ccc; font-family: inherit;" required type="text" name="name" placeholder="Name"/>
-                        <input style="width: 50%;padding: 15px;margin: 5px;border-radius: 1px;border: 1px solid #ccc; font-family: inherit;" required type="email" name="email" placeholder="Email"/>
-                        <select onchange="countrySelected(this)" id="country" required style="width: 50%;padding: 15px;margin: 5px;border-radius: 1px;border: 1px solid #ccc; font-family: inherit;" name="country" onchange="selectedCountry(this)">
+                        <input class="cs-form-input" required type="text" name="name" placeholder="Name"/>
+                        <input class="cs-form-input" required type="email" name="email" placeholder="Email"/>
+                        <select onchange="countrySelected(this)" id="country" required class="cs-form-input" name="country" onchange="selectedCountry(this)">
                             <option>Select Country</option>
                              @foreach($all_country as $country_data)
                                  {
@@ -40,18 +40,26 @@
                            @endforeach
                       </select>
 
-                      <select id="city" required  style="width: 50%;padding: 15px;margin: 5px;border-radius: 1px;border: 1px solid #ccc; font-family: inherit;" name="city">
+                      <select id="city" required class="cs-form-input" name="city">
                            <option>Select City</option>
 
                       </select>
 
-                      <input style="width: 50%;padding: 15px;margin: 5px;border-radius: 1px;border: 1px solid #ccc; font-family: inherit;"  required type="password" minlength="8" name="password" placeholder="Password (Minimum Length 8)"/>
+                      <input class="cs-form-input"  required type="password" minlength="8" name="password" placeholder="Password (Minimum Length 8)"/>
 
-                      <input style="width: 50%;padding: 15px;margin: 5px;border-radius: 1px;border: 1px solid #ccc; font-family: inherit;" required type="date" name="starting_date" placeholder="Date"/>
+                      <input 
+                        required
+                        name="starting_date"
+                        class="cs-form-input" 
+                        placeholder="Date" 
+                        class="cs-form-input" 
+                        type="text" 
+                        onfocus="(this.type='date')">
 
-                      <input style="width: 50%;padding: 15px;margin: 5px;border-radius: 1px;border: 1px solid #ccc; font-family: inherit;" required type="text" name="location" placeholder="Location"/>
 
-                      <input style="width: 50%;padding: 15px;margin: 5px;border-radius: 1px;border: 1px solid #ccc; font-family: inherit;" required type="text" name="cause" placeholder="Cause"/>
+                      <input class="cs-form-input"required type="text" name="location" placeholder="Location"/>
+
+                      <input class="cs-form-input" required type="text" name="cause" placeholder="Cause"/>
 
                       <textarea style="width:50%;margin:auto;border-radius: 1px;border: 1px solid #ccc; font-family: inherit;"  required type="text" rows="5" name="description" class="form-control" placeholder="Description"></textarea>
 
@@ -87,6 +95,15 @@
         });
     }
 </script>
+
+<style>
+    .cs-form-input{
+
+        width: 50%;padding: 15px;margin: 5px;border-radius: 1px;border: 1px solid #ccc; font-family: inherit;
+
+    }
+    
+</style>
 </main>
 
 @endsection

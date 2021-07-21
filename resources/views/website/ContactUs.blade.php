@@ -38,7 +38,9 @@
 									<div class="col-md-6 p-5">
 										<div class="p-2">
 											<div class="text-color-dark font-weight-bold text-uppercase mb-3"><span style="font-size:20px">GET IN TOUCH!</span></div>
-											<form>
+											<form method="POST" action="/contact">
+												
+												@csrf
 
 											  <input required  type="email" placeholder="Email"  name="mail" style="width: 100%;padding: 15px;margin: 5px;border-radius: 1px;border: 1px solid #ccc; font-family: inherit;">
 											  <textarea required rows="5" cols="48" placeholder="Your Message" name="message" style="width: 100%;padding: 15px;margin: 5px;border-radius: 1px;border: 1px solid #ccc; font-family: inherit;"></textarea>

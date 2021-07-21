@@ -18,7 +18,7 @@ class Host extends Model
 
     protected $dates = ['deleted_at'];
 
-    protected $guarded = ['id'];
+    protected $guarded = [];
 
     public function getAll()
     {

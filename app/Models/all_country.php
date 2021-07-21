@@ -10,5 +10,8 @@ class all_country extends Model
     use HasFactory;
     protected $table='all_country';
 
-    
+    public function getAll()
+    {
+        return all_country::all();
+    }
 }

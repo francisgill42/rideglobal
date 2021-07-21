@@ -25,7 +25,10 @@ class Riders extends Model
     {
         return $this->belongsTo(Country::class,'country_id');
     }
-    
+    public function getAll()
+    {
+        return Riders::all();
+    }
 
     public function getById()
     {

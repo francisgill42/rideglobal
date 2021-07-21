@@ -42,7 +42,7 @@
                         @csrf
 
                         <br/>
-                        <input  id="phone" type="tel" required name="contact" onchange="process()"  placeholder="Contact" style="width: 205%;left:-145px;padding: 15px;padding-left: 75px ;margin: 5px;border-radius: 1px;border: 1px solid #ccc; font-family: inherit;">
+                        <input  id="phone" type="tel" required name="contact" onchange="process()"  placeholder="Contact" style="width: 200%;left:-145px;padding: 15px;padding-left: 75px ;margin: 5px;border-radius: 1px;border: 1px solid #ccc; font-family: inherit;">
                         <br/>
                         <input type="hidden" name="full_number" id="full_number">
                         <input style="width: 50%;padding: 15px;margin: 5px;border-radius: 1px;border: 1px solid #ccc; font-family: inherit;" required type="text" name="name" placeholder="Name"/>
@@ -59,16 +59,14 @@
                            <option value="" disabled selected>Select City</option>
 
                       </select>
+                        <input style="width: 50%;padding: 15px;margin: 5px;border-radius: 1px;border: 1px solid #ccc; font-family: inherit;" type="password" minlength="8" name="password" required placeholder="Password (8 characters Minimum)"/>
+						
+						
+						<input style="width: 50%;padding: 15px;margin: 5px;border-radius: 1px;border: 1px solid #ccc; font-family: inherit;" required type="text" name="location" placeholder="Location"/>
 
-                        <input style="width: 50%;padding: 15px;margin: 5px;border-radius: 1px;border: 1px solid #ccc; font-family: inherit;"  required type="password" minlength="8" name="password" placeholder="Password (Minimum Length 8)"/>
+						<input style="width: 50%;padding: 15px;margin: 5px;border-radius: 1px;border: 1px solid #ccc; font-family: inherit;" required type="text" name="cause" placeholder="Cause"/>
 
-                        <input style="width: 50%;padding: 15px;margin: 5px;border-radius: 1px;border: 1px solid #ccc; font-family: inherit;" required type="date" name="starting_date" placeholder="Date"/>
-
-                        <input style="width: 50%;padding: 15px;margin: 5px;border-radius: 1px;border: 1px solid #ccc; font-family: inherit;" required type="text" name="location" placeholder="Location"/>
-
-                        <input style="width: 50%;padding: 15px;margin: 5px;border-radius: 1px;border: 1px solid #ccc; font-family: inherit;" required type="text" name="cause" placeholder="Cause"/>
-
-                        <textarea style="width:50%;margin:auto;border-radius: 1px;border: 1px solid #ccc; font-family: inherit;"  required type="text" rows="5" name="description" class="form-control" placeholder="Description"></textarea>
+						<textarea style="width:50%;margin:auto;border-radius: 1px;border: 1px solid #ccc; font-family: inherit;"  required type="text" rows="5" name="description" class="form-control" placeholder="Description"></textarea>
 
 
                       <button style="background-color:black;color:white;width:50%;padding: 15px;margin: 5px;border-radius: 1px;font-family: inherit;"> HOST A RIDE </button>
@@ -130,9 +128,9 @@
 				
                 $('#city').html('');
                 for(var i=0;i<data.length;i++)
-                {
-                $('#city').append(`<option value="${data[i].id}">${data[i].name}</option>`);
-                }
+               {
+				     $('#city').append(`<option value="${data[i].id}">${data[i].name}</option>`);
+               }
             }
         });
     }

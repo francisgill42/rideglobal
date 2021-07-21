@@ -11,6 +11,7 @@
 @endsection
 
 
+
 @section('content')
 
     <section id="speakers" class="bg-color-light pt-4">
@@ -46,20 +47,20 @@
                                 <h3 class="text-color-light text-uppercase font-weight-bold mb-2">About Ride Global</h3>
                                 <p class="text-color-light text-uppercase mb-0"> In memory of those lost through the Pandemic</p>
                             </div>
-                            <p class="custom-text-color-1 font-weight-normal pb-4">
-                                Our group is looking to raise money towards the global imuniastion
-                                against COVID – 19, we are proposing to do this by raising funds
-                                through sponsership or moneis raised through merchandising with our
-                                branded clothing range, all profits will be given to those
-                                <span style="text-transform: uppercase;font-size:18px;font-weight:bold">
-								lost through the Pandemic</span> we will speaking with The World Health
-                                Organasition to agree the best way to support this fund raising.
+							<p class="custom-text-color-1 font-weight-normal pb-4">
+								Our organization is looking to raise money towards the global immunization
+								against COVID – 19, we are proposing to do this by raising funds
+								through sponsorship, money raised through merchandising with our
+								branded clothing range. All profits will be given to those
+								<span style="text-transform: uppercase;font-size:18px;font-weight:bold">
+									lost through the Pandemic</span>. We will be speaking with The World Health
+								Organization to agree the best way to support this fund raising.
 
-                            </p>
-                            <div class="p-0">
-                                <a href="AboutUs" class="btn btn-tertiary about-btn-tickets custom-border-radius custom-btn-style-1 text-3 font-weight-semibold text-color-light text-uppercase outline-none mb-4 mr-2">Read More <i class="custom-long-arrow-right" aria-hidden="true"></i></a>
-                                <!-- <a data-hash data-hash-offset="80" href="#schedule" class="btn custom-btn-border-1 custom-btn-style-1 custom-border-radius text-3 font-weight-semibold text-color-light text-uppercase outline-none mb-4">Event Schedule <i class="custom-long-arrow-right" aria-hidden="true"></i></a> -->
-                            </div>
+							</p>
+                             <!--   <div class="p-0">
+                              <a href="AboutUs" class="btn btn-tertiary about-btn-tickets custom-border-radius custom-btn-style-1 text-3 font-weight-semibold text-color-light text-uppercase outline-none mb-4 mr-2">Read More <i class="custom-long-arrow-right" aria-hidden="true"></i></a>
+                               <a data-hash data-hash-offset="80" href="#schedule" class="btn custom-btn-border-1 custom-btn-style-1 custom-border-radius text-3 font-weight-semibold text-color-light text-uppercase outline-none mb-4">Event Schedule <i class="custom-long-arrow-right" aria-hidden="true"></i></a>
+                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -205,6 +206,3 @@
 
     </main>
 @endsection
-
-
-

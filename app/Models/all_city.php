@@ -10,5 +10,8 @@ class all_city extends Model
     use HasFactory;
     protected $table='all_city';
 
-   
+    public function getAll()
+    {
+        return all_city::all();
+    }
 }

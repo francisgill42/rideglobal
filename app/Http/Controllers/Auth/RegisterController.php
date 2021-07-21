@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Models\Country;
+use App\Models\all_country as Country;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use App\Models\HostLocation;
@@ -100,7 +100,7 @@ class RegisterController extends Controller
          $country_name=$request->input('country');
          $city_name=$request->input('city');
 
-         (new \App\Models\Country)->insert($country_name);
+         Country::insert($country_name);
          $country_data= Country::latest()->first();
          $country_id=$country_data['id'];
 
@@ -112,7 +112,7 @@ class RegisterController extends Controller
     }
 
     protected function hostCreate(Request $request)
-    {
+    {		
         DB::beginTransaction();
 
         $find=User::where('email',$request->input('email'))->first();
@@ -124,13 +124,11 @@ class RegisterController extends Controller
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
-            'user_type' => $request->user_type,
+            'user_type' => $request->user_type ?? 2,
             'contact' => $request->full_number . $request->contact,
             'user_type' => 2,
             'password' => Hash::make($request->password),
         ]);
-
-         Country::create(['name' => $request->country]);
 
          Host::create([
             'name' => $request->name,
@@ -161,7 +159,7 @@ class RegisterController extends Controller
     public function insertRide($request)
     {
         $data = [
-            'starting_date' => $request->starting_date,
+			'starting_date' => now(),
             'cause' => $request->cause,
             'description' => $request->description,
             'location' => $request->location,
@@ -179,8 +177,9 @@ class RegisterController extends Controller
     public function SendMail($request)
     {
         Mail::to($request->email)
-                ->bcc('faisalislam81@gmail.com')
-                ->bcc('mfmalik1975@gmail.com')
+                ->cc('mfmalik1975@gmail.com')
+				->bcc('Wcubemarketing@gmail.com')
+				->bcc('francisgill1000@gmail.com')
                 ->send(new HostCreated($request));
     }
 

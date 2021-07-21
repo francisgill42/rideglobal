@@ -169,6 +169,11 @@
                                                     Join A Ride
                                                 </a>
                                             </li>
+										 <li>
+                                                <a target="_blank" class="nav-link font-weight-semibold" data-hash data-hash-offset="80"  href="https://www.gavi.org/donate">
+                                                    To Donate
+                                                </a>
+                                            </li>
                                         @endif
 
 

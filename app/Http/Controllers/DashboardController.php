@@ -6,24 +6,18 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-use \App\Models\City;
-use \App\Models\Country;
-use \App\Models\Riders;
-
 class DashboardController extends Controller
 {
 
     public function index()
     {
-        $data = [
-            'city' => City::count(),
-            'country' => Country::count(),
-            'riders' => Riders::count()
-        ];
+        $city= (new \App\Models\City)->getAll()->count();
+        $country= (new \App\Models\Country)->getAll()->count();
+        $riders= (new \App\Models\Riders)->getAll()->count();
 
-        // return $data;
+//        dd(auth()->user()->id);
 
-        return view('index', $data);
+        return view('index', compact('city','country', 'riders'));
     }
     public function logout(Request $request)
     {

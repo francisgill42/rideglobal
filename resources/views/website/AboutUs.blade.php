@@ -41,7 +41,7 @@
                              us all in some form or other.
                     </p>
                     <p class="custom-font-size-1 text-left mb-4">
-                        •	Our vision, born out of this devastating was to connect countries across the
+                        •	Our vision, born out of this devastation was to connect countries across the
                             globe in a new initiative involving a collective of keen motorcyclists.
                             The initial idea was inspired by the loss of a family member through COVID who
                             suddenly succumbed to this devastating disease and sadly is no longer with us.

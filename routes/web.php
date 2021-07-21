@@ -1,12 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
-use App\Models\Contact;
-use \App\Models\City;
-use \App\Models\Country;
-use \App\Models\Riders;
-
+use Illuminate\Support\Facades\Mail;
+use App\Mail\HostCreated;
 
 //login
 Route::get('/admin/login', [App\Http\Controllers\LoginController::Class,'index']);
@@ -14,6 +10,16 @@ Route::post('/admin/login/creds', [App\Http\Controllers\LoginController::Class,'
 Route::get('/admin/test', function(){
     return view('text');
 });
+
+Route::get('/mail', [App\Http\Controllers\Auth\RegisterController::Class,'mail']);
+
+
+Route::get('/email', function (){
+	
+	Mail::to('abc@email.com')->send(new HostCreated());
+    return new HostCreated(); 
+});
+
 
 Route::get('login-page', function (){
     return ("hello");
@@ -50,15 +56,6 @@ Route::get('/admin/host/getAll', [App\Http\Controllers\HostController::Class,'ge
 Route::post('/getByCountryId', [App\Http\Controllers\HostController::Class,'getByCountryId']);
 Route::post('/host-register', [App\Http\Controllers\Auth\RegisterController::Class,'hostCreate']);
 
-Route::get('/mailSend',[App\Http\Controllers\Auth\RegisterController::Class,'mailSend']);
-
-
-// Route::get('/mailSend', function () {
-
-//     Mail::to('francisgill1000@gmail.com')->send(new App\Mail\HostCreated());
-// });
-
-
 
 //Rides
 Route::get('/showrides', [App\Http\Controllers\RidesController::Class,'index']);
@@ -79,11 +76,14 @@ Route::get('/rider-logout',[App\Http\Controllers\RiderRegistrationController::Cl
 //Website
 Route::get('/',[App\Http\Controllers\MainPageController::Class,'index']);
 
+
 Route::get('/rider-login',[App\Http\Controllers\MainPageController::Class,'RiderLogin']);
 
 Route::get('/causes', [App\Http\Controllers\MainPageController::Class,'Causes']);
 
 Route::get('/contact-us', [App\Http\Controllers\MainPageController::Class,'Contact']);
+
+Route::post('/contact', [App\Http\Controllers\ContactController::Class,'store']);
 
 Route::get('/about-us', [App\Http\Controllers\MainPageController::Class,'aboutUs']);
 
@@ -91,29 +91,12 @@ Route::get('/team', [App\Http\Controllers\MainPageController::Class,'Team']);
 
 Route::get('/host',[App\Http\Controllers\HostRideController::Class,'index']);
 
-
 Route::post('/submit-contact-form', [App\Http\Controllers\MainPageController::Class,'SendMail']);
 
 
 Route::get('/admin', function () {
     return redirect('admin/home');
 });
-
-Route::get('/mailInBrowser', function () {
-
-    return new App\Mail\HostCreated();
-});
-
-Route::get('/mailInBrowser', function () {
-
-    return new App\Mail\HostCreated();
-});
-
-
-
-
-
-
 
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\DashboardController::class, 'index'])->name('home');
